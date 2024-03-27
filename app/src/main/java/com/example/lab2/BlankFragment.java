@@ -9,29 +9,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.lab2.databinding.FragmentBlank2Binding;
+import com.example.lab2.databinding.FragmentBlankBinding;
 
 public class BlankFragment extends Fragment {
 
-    FragmentBlank2Binding binding;
+    FragmentBlankBinding binding;
     InnerInterface InnerInterface;
 
     public String text;
+
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
-   }
-
+        InnerInterface = (InnerInterface) context;
+    }
+    public void setCallBackInterface(InnerInterface callBackInterface){
+        this.InnerInterface = callBackInterface;
+    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+   
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentBlank2Binding.inflate(inflater, container, false);
+        binding = FragmentBlankBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        binding.textView.setText(text);
-        binding.button2.setOnClickListener(new View.OnClickListener() {
+        binding.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InnerInterface.Button2Switch();
+                InnerInterface.Button1Switch(binding.editText.getText().toString());
             }
         });
         // Inflate the layout for this fragment

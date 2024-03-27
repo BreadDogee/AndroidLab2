@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
+import androidx.viewbinding.ViewBinding;
 import android.os.Bundle;
 import android.view.View;
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements InnerInterface {
         fragmentTransaction.commit();
 
     }
-
+    @Override
     public void Button2Switch(){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
