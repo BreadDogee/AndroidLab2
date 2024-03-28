@@ -23,8 +23,8 @@ public class BlankFragment extends Fragment {
         super.onAttach(context);
         InnerInterface = (InnerInterface) context;
     }
-    public void setCallBackInterface(InnerInterface callBackInterface){
-        this.InnerInterface = callBackInterface;
+    public void setInnerInterface(InnerInterface InnerInterface){
+        this.InnerInterface = InnerInterface;
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
